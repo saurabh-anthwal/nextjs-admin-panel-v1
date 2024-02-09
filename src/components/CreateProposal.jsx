@@ -48,68 +48,68 @@ const CreateProposal = () => {
 
   return (
     <div className="p-4">
-      <h1 className="text-2xl text-center my-6">Create Proposal</h1>
-      <form onSubmit={handleSubmit} className="max-w-[400px] mx-auto">
+      <form onSubmit={handleSubmit} className="">
+        <div className="">
+          <h1 className="text-2xl text-center my-6">Basic Details</h1>
         <div className="flex gap-4">
           <label>
-            Name:
+            Product Name*
             <input
-              className="flex-1 text-sm my-1 px-2 py-2 w-full outline outline-gray-200 rounded-xl"
+              className="flex-1 text-sm my-1 px-2 py-2 w-full outline outline-gray-200 rounded-lg"
               type="text"
               name="name"
               value={formData.name}
               onChange={handleChange}
             />
           </label>
-
           <label>
-            Details:
-            <input
-              className="flex-1 text-sm my-1 px-2 py-2 w-full outline outline-gray-200 rounded-xl"
-              type="text"
-              name="details"
-              value={formData.details}
-              onChange={handleChange}
-            />
+          Current Price *
+          <input
+            className="text-sm my-1 px-2 py-2 w-full outline outline-gray-200 rounded-lg"
+            type="text"
+            name="price"
+            value={formData.price}
+            onChange={handleChange}
+          />
           </label>
-        </div>
-        <div className="flex gap-2">
           <label>
-            Off Price:
+            Old Price *
             <input
-              className="flex-1 text-sm my-1 px-2 py-2 w-full outline outline-gray-200 rounded-xl"
-              type="text"
-              name="off_price"
-              value={formData.off_price}
-              onChange={handleChange}
-            />
-          </label>
-          <br />
-          <label>
-            Old Price:
-            <input
-              className="flex-1 text-sm my-1 px-2 py-2 w-full outline outline-gray-200 rounded-xl"
+              className="flex-1 text-sm my-1 px-2 py-2 w-full outline outline-gray-200 rounded-lg"
               type="text"
               name="old_price"
               value={formData.old_price}
               onChange={handleChange}
             />
           </label>
+          <label>
+            Discount (%):
+            <input
+              className="flex-1 text-sm my-1 px-2 py-2 w-full outline outline-gray-200 rounded-lg"
+              type="text"
+              name="off_price"
+              value={formData.off_price}
+              onChange={handleChange}
+            />
+          </label>
         </div>
+        
         <label>
-          Price:
-          <input
-            className="text-sm my-1 px-2 py-2 w-full outline outline-gray-200 rounded-xl"
-            type="text"
-            name="price"
-            value={formData.price}
-            onChange={handleChange}
-          />
-        </label>
+            Description*
+            <textarea
+            // rows={4}
+            // cols={50}
+              className="flex-1 text-sm my-1 px-2 py-2 w-full outline outline-gray-200 rounded-lg"
+              type="text"
+              name="details"
+              value={formData.details}
+              onChange={handleChange}
+            />
+          </label>
         <label>
-          Image:
+          Image URL*
           <input
-            className="text-sm my-1 px-2 py-2 w-full outline outline-gray-200 rounded-xl"
+            className="text-sm my-1 px-2 py-2 w-full outline outline-gray-200 rounded-lg"
             type="text"
             name="image"
             value={formData.image}
@@ -117,12 +117,14 @@ const CreateProposal = () => {
           />
         </label>
         <br />
+       
         <button
           type="submit"
-          className="bg-black w-full px-3 py-2 text-white mt-3  rounded-xl"
+          className="bg-black w-full px-3 py-2 text-white mt-3  rounded-lg"
         >
           Submit
         </button>
+        </div>
       </form>
     </div>
   );

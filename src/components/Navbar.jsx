@@ -1,7 +1,6 @@
 "use client";
 import React from "react";
-import { FaUser } from "react-icons/fa";
-import { IoLogoReddit } from "react-icons/io";
+import { IoMdLogOut } from "react-icons/io";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 const Navbar = () => {
@@ -14,8 +13,7 @@ const Navbar = () => {
   return (
     <div className="bg-gray-100">
       <div className="flex w-[98%] m-auto justify-between  p-2 items-center">
-        <div className="flex items-center gap-2">
-          <IoLogoReddit />
+        <div className="flex items-center gap-2 font-semibold">
           LOGO
         </div>
         <div>
@@ -27,7 +25,7 @@ const Navbar = () => {
               <Link href={"/"}>Contact</Link>
             </li>
             <li className="md:ml-4">
-              <FaUser className="cursor-pointer text-gray-800" onClick={logout} />
+              <IoMdLogOut className="h-6 w-6 cursor-pointer text-gray-800 hover:text-red-600" onClick={logout} />
             </li>
           </ul>
         </div>
