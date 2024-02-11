@@ -1,13 +1,21 @@
 "use client";
-import { useRouter } from 'next/navigation'
+import { useRouter } from "next/navigation";
+import { useState, useEffect } from "react";
 
-const ProtectedRoute = ({children}) => {
-    const router = useRouter()
+const ProtectedRoute = ({ children }) => {
+  const router = useRouter();
+  const [isAuth, setIsAuth] = useState(false);
 
-    if(localStorage.getItem("userInfo")){
-        return children
+  useEffect(() => {
+    if (typeof window !== "undefined" && window.localStorage) {
+      const item = localStorage.getItem("userInfo");
+      if (!item) {
+        router.push("/login")
+      }
     }
-    return router.push('/login')
-}
+  }, []);
 
-export default ProtectedRoute
+  return children;
+};
+
+export default ProtectedRoute;
